@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" th:href="@{/css/main.css}">
+<title>Search</title>
+</head>
+
+<body>
+	<section>
+
+		<div class="container">
+			<form action="#" th:action="@{/register}" method="post">
+				<p>Register</p>
+				<input type="text" name="name" placeholder="Name" class="field"><br>
+				<input type="password" name="password" placeholder="Password"
+					class="field"><br> <a>Choose Roles </a> <br> <input
+					class="check" type="checkbox" name="boss"><a>Boss</a> <input
+					type="checkbox" class="check" name="worker"><a>Worker</a> <br>
+
+				<a class="signup" href="#"> <span></span> <span></span> <span></span>
+					<span></span> <input type="submit" value="Add User" class="button"
+					id="login-submit"> <!-- <input type="submit" name="login-submit"
+					id="login-submit" value="Log In">
+					 -->
+				</a> <br>
+			</form>
+
+			<div class="footer">
+				Back to <a th:href="@{/}">Home Page</a> <br> <br> Back to
+				<a th:href="@{/login}">Login Page</a>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

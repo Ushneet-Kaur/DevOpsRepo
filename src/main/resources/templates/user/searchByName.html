@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<title>Search Equipments</title>
+</head>
+<body>
+	<h1>Search Database by name:</h1>
+	
+	<div>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Quantity</th>
+			</tr>
+			
+			<tr th:each="e: ${equipmentsByName}">
+				<td th:text="${e.equipmentName}"></td>
+				<td th:text="${e.price}"></td>
+				<td th:text="${e.quantity}"></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="footer">
+	  Back to<a th:href="@{/}">Homepage</a>
+	  <br>
+	  Back to<a th:href="@{/user/search}">Search Equipments Database</a>
+	</div>
+</body>
+</html>

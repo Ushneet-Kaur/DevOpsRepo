@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<title>View Equipments</title>
+</head>
+<body>
+	<section>
+		<h1>Equipments Added to Database:</h1>
+
+		<div class="e-tableHeader">
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Price</th>
+						<th>Quantity</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+
+
+			</table>
+		</div>
+
+		<div class="e-tableBody">
+			<table>
+				<tbody>
+					<tr th:each="e: ${equipments}">
+						<td th:text="${e.equipmentName}"></td>
+						<td th:text="${e.price}"></td>
+						<td th:text="${e.quantity}"></td>
+
+						<td><a href="" th:href="@{/boss/edit/{id}(id=${e.id})}">Edit</a></td>
+						<td><a href="" th:href="@{/boss/delete/{id}(id=${e.id})}">Delete</a></td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+	<div class="footer">
+		Back to <a th:href="@{/}">Homepage</a>
+	</div>
+</body>
+</html>

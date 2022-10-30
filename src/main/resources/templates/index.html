@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Root Page</title>
+<link rel="stylesheet" th:href="@{/css/rootpage.css}">
+</head>
+<body>
+	<section>
+
+		<h1>Welcome to the root page</h1>
+
+		<div class="e-tableBody">
+			<table>
+				<thead class="e-tableHeader">
+					<tr>
+						<th colspan="2">Main Menu</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th><a th:href="@{/viewEquipment}"> View Equipments Page</a></th>
+						<th><a th:href="@{/register}"> Registeration Page</a></th>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+		<div class="e-tableBody">
+			<table>
+				<thead class="e-tableHeader">
+					<tr>
+						<th colspan="2">Boss Only Menu</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						
+						<th><a th:href="@{/boss/viewEquipment}"> Edit Equipments
+								Page</a></th>
+						<th><a th:href="@{/boss/viewEquipment}"> Delete
+								Equipments Page</a></th>
+					</tr>
+					<tr>
+						<th><a th:href="@{/user/search}"> Search Equipments Page
+						</a></th>
+						<!--  <th><a th:href="@{/boss/addEquipment}"> Add Equipment
+								Page</a></th>
+								-->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="e-tableBody">
+			<table >
+				<thead class="e-tableHeader">
+					<tr>
+						<th>Employee Only Menu</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th><a th:href="@{/user/search}"> Search Equipments Page
+						</a></th>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+	</section>
+
+
+	<div class=" footer" sec:authorize="isAuthenticated()">
+
+		<h3>
+			User's Name: <span sec:authentication="name"></span> <br> Roles:
+			<span sec:authentication="principal.authorities"></span>
+		</h3>
+		<br>
+
+		<div>
+			<form action="#" th:action="@{/logout}" method="post">
+				<input class="signup" type="submit" value="Logout" />
+			</form>
+		</div>
+	</div>
+</body>
+</html>

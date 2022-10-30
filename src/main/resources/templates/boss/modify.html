@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" th:href="@{/css/main.css}">
+<title>Modify Equipment</title>
+</head>
+<body>
+	
+	<h1>Modify Equipment</h1>
+	
+	<form action="#" th:action="@{/boss/modify}" th:object="${equipment}">
+		<p> <input type="hidden" th:field="*{id}" /> </p>
+		<p> Name: <input type="text" th:field="*{equipmentName}"> </p>
+		<p> Price: <input type="text" th:field="*{price}"> </p>
+		<p> Quantity: <input type="text" th:field="*{quantity}"> </p>
+		
+		<input type="submit" value="Modify Equipment Details">
+	</form>
+	
+
+	<p> <a th:href="@{/}">Homepage</a> </p>
+</body>
+</html>
